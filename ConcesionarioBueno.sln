@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Respositories", "Respositories\Respositories.csproj", "{CFA3151C-46C1-4FCB-A464-175C4C3D5614}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFormsPresentation", "WFormsPresentation\WFormsPresentation.csproj", "{ED5B8485-381C-4A5F-83EB-14E24CB6684C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CFA3151C-46C1-4FCB-A464-175C4C3D5614}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA3151C-46C1-4FCB-A464-175C4C3D5614}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA3151C-46C1-4FCB-A464-175C4C3D5614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5B8485-381C-4A5F-83EB-14E24CB6684C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5B8485-381C-4A5F-83EB-14E24CB6684C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5B8485-381C-4A5F-83EB-14E24CB6684C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5B8485-381C-4A5F-83EB-14E24CB6684C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{716F43A1-2FFE-461A-B821-4DC2687AC629} = {6BECB2A7-3A37-4C84-98E3-031D1B222201}
 		{B12810A3-0436-48FA-9178-E056B521D259} = {6BECB2A7-3A37-4C84-98E3-031D1B222201}
 		{CFA3151C-46C1-4FCB-A464-175C4C3D5614} = {CE784FB7-6A1A-4563-8CE7-3C8805414FE5}
+		{ED5B8485-381C-4A5F-83EB-14E24CB6684C} = {77B1E02E-7C06-4EB7-9D0A-CB69EF6332A6}
 	EndGlobalSection
 EndGlobal

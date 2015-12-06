@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    interface IClienteService : IService<Cliente>
+    public interface IClienteService : IService<Cliente>
     {
         void ModificarTelefonoCliente(int id, string telefono);
         void AñadirPresupuestoCliente(Cliente c, Presupuesto p);

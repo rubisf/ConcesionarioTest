@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    interface IService<T>
+    public interface IService<T>
     {
         void Añadir(T t);
         void Eliminar(T t);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    interface IVehiculoService : IService<Vehiculo>
+    public interface IVehiculoService : IService<Vehiculo>
     {
         void AñadirPresupuestoVehiculo(Vehiculo v, Presupuesto p);
         ICollection<Presupuesto> PresupuestosPorVehiculo(Vehiculo v);
