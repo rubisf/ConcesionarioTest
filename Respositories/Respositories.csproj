@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="AdoUoW.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryPresupuesto.cs" />
+    <Compile Include="RepositoryVehiculo.cs" />
     <Compile Include="RepositoryCliente.cs" />
   </ItemGroup>
   <ItemGroup>

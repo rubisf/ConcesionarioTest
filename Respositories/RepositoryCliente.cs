@@ -97,6 +97,13 @@ namespace Respositories
                         Console.WriteLine("No rows found.");
                     }
                     reader.Close();
+
+                    foreach(Cliente c in ilc)
+                    {
+                        RepositoryPresupuesto rp = new RepositoryPresupuesto(this.sqlCon, this.sqlTran);
+                        ICollection<Presupuesto> ilp = rp.GetPresupuestosCliente(c);
+                        c.Presupuestos = ilp.Cast<Presupuesto>().ToList(); ;
+                    }
                 }
             }
             return ilc;
@@ -124,6 +131,9 @@ namespace Respositories
                         Console.WriteLine("No rows found.");
                     }
                     reader.Close();
+                    RepositoryPresupuesto rp = new RepositoryPresupuesto(this.sqlCon,this.sqlTran);
+                    ICollection<Presupuesto> ilp = rp.GetPresupuestosCliente(c);
+                    c.Presupuestos = ilp.Cast<Presupuesto>().ToList();
                 }
             }
             return c;

@@ -14,7 +14,7 @@ namespace DomainModel
         public string Apellidos { get; }
         public string Telefono { get; set; }
         public bool Vip { get; }
-        public IList<Presupuesto> Presupuestos { get; private set; }
+        public IList<Presupuesto> Presupuestos { get; set; }
 
         
 
@@ -24,6 +24,7 @@ namespace DomainModel
             this.Apellidos = Apellidos;
             this.Telefono = Telefono;
             this.Vip = Vip;
+            this.Presupuestos = new List<Presupuesto>();
         }
 
         public void AniadePresupuesto(Presupuesto presu)
@@ -33,7 +34,14 @@ namespace DomainModel
 
         public override String ToString()
         {
-            return Id + " | " + Nombre + " | " + Apellidos + " | " + Telefono + " | " + Vip;
+            string cli = Id + " | " + Nombre + " | " + Apellidos + " | " + Telefono + " | " + Vip;
+            foreach(Presupuesto p in this.Presupuestos)
+            {
+                cli = cli + "\r\n\t" + p.Id + " | " + p.Estado + " | " + p.Importe;
+            }
+
+            return   cli;
+
         }
 
     }

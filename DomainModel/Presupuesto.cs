@@ -12,8 +12,8 @@ namespace DomainModel
         public int Id { get; private set; }
         public string Estado { get; private set; }
         public string Importe { get; private set; }
-        public Vehiculo Vehiculo { get; private set; }
-        public Cliente Cliente { get; private set; }
+        public Vehiculo Vehiculo { get; set; }
+        public Cliente Cliente { get; set; }
         
         public Presupuesto(int Id, string Estado, string Importe, Vehiculo Vehiculo, Cliente Cliente)
         {
@@ -24,7 +24,16 @@ namespace DomainModel
             this.Cliente = Cliente;
 
             this.Vehiculo.Presupuestos.Add(this);
-            this.Cliente.Presupuestos.Add(this);
+            if(this.Cliente != null)
+                this.Cliente.Presupuestos.Add(this);
         }
+
+        public override string ToString()
+        {
+            string s = "";
+            s = Id + " | " + Estado + " | " + Importe + "\r\n\t | " + Vehiculo + "\r\n\t | " + Cliente;
+            return s;
+        }
+
     }
 }

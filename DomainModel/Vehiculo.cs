@@ -20,10 +20,17 @@ namespace DomainModel
             this.Modelo = Modelo;
             this.Marca = Marca;
             this.Potencia = Potencia;
+            this.Presupuestos = new List<Presupuesto>();
+
         }
 
         public void AniadePresupuesto(Presupuesto presu){
             Presupuestos.Add(presu);
+        }
+
+        public override string ToString()
+        {
+            return this.Id + " | "+Modelo + " | " + Marca + " | " + Potencia;
         }
 
 

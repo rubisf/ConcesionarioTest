@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPresupuesto.Designer.cs">
+      <DependentUpon>FPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     </Compile>
     <EmbeddedResource Include="FCliente.resx">
       <DependentUpon>FCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPresupuesto.resx">
+      <DependentUpon>FPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FPrincipal.resx">
       <DependentUpon>FPrincipal.cs</DependentUpon>

@@ -18,12 +18,14 @@ namespace WFormsPresentation
 
         IClienteService cService;
         IVehiculoService vService;
+        IPresupuestoService pService;
 
-        public FPrincipal(IClienteService cs, IVehiculoService vService)
+        public FPrincipal(IClienteService cs, IVehiculoService vService, IPresupuestoService pService)
         {
             InitializeComponent();
             this.cService = cs;
             this.vService = vService;
+            this.pService = pService;
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -39,7 +41,7 @@ namespace WFormsPresentation
 
             AdoUoW auow = new AdoUoW();
 
-            Application.Run(new FPrincipal(new ClienteService(auow), new VehiculoService(auow)));
+            Application.Run(new FPrincipal(new ClienteService(auow), new VehiculoService(auow), new PresupuestoService(auow)));
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -62,6 +64,34 @@ namespace WFormsPresentation
         {
             Form cli = new FCliente(this.cService);
             cli.Show();
+        }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ICollection<Presupuesto> clis = pService.ObtenerTodos();
+            Console.WriteLine("** Listado de Presupuestos **");
+            //if (clis != null)
+                foreach (Presupuesto cl in clis)
+                {
+                    Console.WriteLine(cl);
+                }
+        }
+
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form cli = new FPresupuesto(this.pService,this.cService,this.vService);
+            cli.Show();
+        }
+
+        private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ICollection<Vehiculo> clis = vService.ObtenerTodos();
+            Console.WriteLine("** Listado de Vehiculos **");
+            //if (clis != null)
+            foreach (Vehiculo cl in clis)
+            {
+                Console.WriteLine(cl);
+            }
         }
     }
 }

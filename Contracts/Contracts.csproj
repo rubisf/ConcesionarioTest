@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository.cs" />
+    <Compile Include="IRepositoryPresupuesto.cs" />
     <Compile Include="IRepositoryVehiculo.cs" />
     <Compile Include="IRepositoryCliente.cs" />
     <Compile Include="IUoW.cs" />

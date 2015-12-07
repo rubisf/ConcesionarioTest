@@ -22,6 +22,9 @@ namespace Respositories
         IRepositoryVehiculo rVehiculos;
         public IRepositoryVehiculo RVehiculos { get; set; }
 
+        IRepositoryPresupuesto rPresupuesto;
+        public IRepositoryPresupuesto RPresupuestos { get; set; }
+
         public AdoUoW()
         {
             //this.cadCon = "Data Source=localhost; Integrated security=SSPI; Initial Catalog=Concesionario;";
@@ -36,7 +39,12 @@ namespace Respositories
                 this.t = cn.BeginTransaction();
                 this.RClientes = new RepositoryCliente(cn, t);
                 this.rClientes = this.RClientes;
-            }catch(Exception e)
+                this.RVehiculos = new RepositoryVehiculo(cn, t);
+                this.rVehiculos = this.RVehiculos;
+                this.RPresupuestos = new RepositoryPresupuesto(cn, t);
+                this.rPresupuesto = this.RPresupuestos;
+            }
+            catch(Exception e)
             {
                 Console.WriteLine(e.ToString());
             }

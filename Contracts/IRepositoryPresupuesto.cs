@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Contracts
 {
-    public interface IRepositoryVehiculo : IRepository<Vehiculo>
+    public interface IRepositoryPresupuesto : IRepository<Presupuesto>
     {
-        int GetId(Vehiculo cli);
+        int GetId(Presupuesto cli);
     }
 }

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contracts
+namespace Services
 {
-    public interface IRepositoryVehiculo : IRepository<Vehiculo>
+    public interface IPresupuestoService : IService<Presupuesto>
     {
-        int GetId(Vehiculo cli);
+        
     }
 }

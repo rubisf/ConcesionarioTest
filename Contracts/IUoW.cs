@@ -10,6 +10,7 @@ namespace Contracts
     {
         IRepositoryCliente RClientes { get; }
         IRepositoryVehiculo RVehiculos { get; }
+        IRepositoryPresupuesto RPresupuestos { get; }
 
         void Comenzar();
         void Terminar();
