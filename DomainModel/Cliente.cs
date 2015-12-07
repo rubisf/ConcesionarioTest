@@ -31,5 +31,10 @@ namespace DomainModel
             Presupuestos.Add(presu);
         }
 
+        public override String ToString()
+        {
+            return Id + " | " + Nombre + " | " + Apellidos + " | " + Telefono + " | " + Vip;
+        }
+
     }
 }

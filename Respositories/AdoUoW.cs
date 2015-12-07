@@ -16,7 +16,7 @@ namespace Respositories
         public SqlTransaction T;
         SqlTransaction t;
 
-        IRepositoryCliente rClientes;
+        IRepositoryCliente rClientes = null;
         public IRepositoryCliente RClientes { get; set; }
 
         IRepositoryVehiculo rVehiculos;
@@ -24,14 +24,22 @@ namespace Respositories
 
         public AdoUoW()
         {
-            this.cadCon = "Data Source=localhost; Integrated security=SSPI; Initial Catalog=Concesionario";
-            this.cn = new SqlConnection(cadCon);
+            //this.cadCon = "Data Source=localhost; Integrated security=SSPI; Initial Catalog=Concesionario;";
+            this.cadCon = "server=ACER-LAPTOP\\SQLEXPRESS;Database=Concesionario;User Id=root; Password=root";
+            this.cn = new SqlConnection(this.cadCon);
         }
 
         public void Comenzar()
         {
-            this.cn.Open();
-            this.t = cn.BeginTransaction();
+            try {
+                this.cn.Open();
+                this.t = cn.BeginTransaction();
+                this.RClientes = new RepositoryCliente(cn, t);
+                this.rClientes = this.RClientes;
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
         }
 
         public void RollBack()

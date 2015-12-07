@@ -39,9 +39,9 @@ namespace Respositories
                     sql.CommandText = "INSERT into Clientes" +
                         "(Nombre,Apellidos,Telefono,VIP) Values (@nombre,@apellidos,@telefono,@vip)";
                     sql.Parameters.AddWithValue("@nombre", t.Nombre);
-                    sql.Parameters.AddWithValue("@nombre", t.Apellidos);
-                    sql.Parameters.AddWithValue("@nombre", t.Telefono);
-                    sql.Parameters.AddWithValue("@nombre", t.Vip);
+                    sql.Parameters.AddWithValue("@apellidos", t.Apellidos);
+                    sql.Parameters.AddWithValue("@telefono", t.Telefono);
+                    sql.Parameters.AddWithValue("@vip", t.Vip);
 
                     sql.ExecuteNonQuery();
                 }
@@ -50,12 +50,28 @@ namespace Respositories
 
         public void Delete(Cliente t)
         {
-            throw new NotImplementedException();
+            using (SqlCommand sql = this.CreateCommand())
+            {
+                if (sql != null)
+                {
+                    sql.CommandText = "DELETE FROM  Clientes where Id=" +
+                        t.Id;
+                    sql.ExecuteNonQuery();
+                }
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (SqlCommand sql = this.CreateCommand())
+            {
+                if (sql != null)
+                {
+                    sql.CommandText = "DELETE FROM  Clientes where Id=" +
+                        id;
+                    sql.ExecuteNonQuery();
+                }
+            }
         }
 
         public ICollection<Cliente> GetAll()
@@ -74,8 +90,6 @@ namespace Respositories
                         {
                             Cliente c = new Cliente(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetBoolean(4));
                             ilc.Add(c);
-                            Console.WriteLine("{0}\t{1}", reader.GetInt32(0),
-                                reader.GetString(1));
                         }
                     }
                     else
@@ -90,17 +104,52 @@ namespace Respositories
 
         public Cliente GetById(int id)
         {
-            throw new NotImplementedException();
+            Cliente c = null;
+            using (SqlCommand sql = this.CreateCommand())
+            {
+                if (sql != null)
+                {
+                    sql.CommandText = "SELECT * FROM Clientes WHERE id="+id;
+                    SqlDataReader reader = sql.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            c = new Cliente(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetBoolean(4));
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No rows found.");
+                    }
+                    reader.Close();
+                }
+            }
+            return c;
         }
 
         public int GetId(Cliente cli)
         {
-            throw new NotImplementedException();
+            return cli.Id;
         }
 
         public void Update(Cliente t)
         {
-            throw new NotImplementedException();
+            using (SqlCommand sql = this.CreateCommand())
+            {
+                if (sql != null)
+                {
+                    sql.CommandText = "UPDATE Clientes SET" +
+                        " Nombre = @nombre, Apellidos = @apellidos, Telefono = @telefono ,VIP = @vip WHERE Id = "+t.Id;
+                    sql.Parameters.AddWithValue("@nombre", t.Nombre);
+                    sql.Parameters.AddWithValue("@apellidos", t.Apellidos);
+                    sql.Parameters.AddWithValue("@telefono", t.Telefono);
+                    sql.Parameters.AddWithValue("@vip", t.Vip);
+
+                    sql.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

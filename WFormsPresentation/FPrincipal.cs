@@ -57,5 +57,11 @@ namespace WFormsPresentation
                     Console.WriteLine(cl);
                 }
         }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form cli = new FCliente(this.cService);
+            cli.Show();
+        }
     }
 }
