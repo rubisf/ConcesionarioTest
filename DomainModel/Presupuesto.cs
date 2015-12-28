@@ -1,21 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DomainModel
 {
-    public class Presupuesto
+    public partial class Presupuesto
     {
 
-        public int Id { get; private set; }
-        public string Estado { get; private set; }
-        public string Importe { get; private set; }
-        public Vehiculo Vehiculo { get; set; }
-        public Cliente Cliente { get; set; }
+        public int Id { get; set; }
+        public string Estado { get; set; }
+        public double Importe { get; set; }
+        [ForeignKey("Cliente")]
+        public int ClienteId { get; set; }
+        [ForeignKey("Vehiculo")]
+        public int VehiculoId { get; set; }
+        public virtual Vehiculo Vehiculo { get; set; }
+        public virtual Cliente Cliente { get; set; }
         
-        public Presupuesto(int Id, string Estado, string Importe, Vehiculo Vehiculo, Cliente Cliente)
+        public Presupuesto(int Id, string Estado, double Importe, Vehiculo Vehiculo, Cliente Cliente)
         {
             this.Id = Id;
             this.Estado = Estado;
@@ -28,12 +34,21 @@ namespace DomainModel
                 this.Cliente.Presupuestos.Add(this);
         }
 
+        public Presupuesto()
+        {
+            this.Vehiculo = null;
+            this.Cliente = null;
+        }
+
         public override string ToString()
         {
             string s = "";
             s = Id + " | " + Estado + " | " + Importe + "\r\n\t | " + Vehiculo + "\r\n\t | " + Cliente;
             return s;
         }
+        
 
     }
+
+    
 }

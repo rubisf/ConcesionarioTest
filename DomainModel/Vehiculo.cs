@@ -8,11 +8,11 @@ namespace DomainModel
 {
     public class Vehiculo
     {
-        public int Id { get; private set; }
-        public string Modelo { get; private set; }
-        public string Marca { get; private set; }
-        public int Potencia { get; private set; }
-        public IList<Presupuesto> Presupuestos { get; private set; }
+        public int Id { get; set; }
+        public string Modelo { get; set; }
+        public string Marca { get; set; }
+        public int Potencia { get; set; }
+        public virtual ICollection<Presupuesto> Presupuestos { get; set; }
 
 
         public Vehiculo(int Id, string Modelo, string Marca, int Potencia) {
@@ -22,6 +22,11 @@ namespace DomainModel
             this.Potencia = Potencia;
             this.Presupuestos = new List<Presupuesto>();
 
+        }
+
+        public Vehiculo()
+        {
+            this.Presupuestos = new List<Presupuesto>();
         }
 
         public void AniadePresupuesto(Presupuesto presu){

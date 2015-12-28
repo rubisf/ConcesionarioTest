@@ -39,7 +39,7 @@ namespace WFormsPresentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            AdoUoW auow = new AdoUoW();
+            EntityUoW auow = new EntityUoW();
 
             Application.Run(new FPrincipal(new ClienteService(auow), new VehiculoService(auow), new PresupuestoService(auow)));
         }
@@ -68,9 +68,10 @@ namespace WFormsPresentation
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             ICollection<Presupuesto> clis = pService.ObtenerTodos();
             Console.WriteLine("** Listado de Presupuestos **");
-            //if (clis != null)
+            if (clis != null)
                 foreach (Presupuesto cl in clis)
                 {
                     Console.WriteLine(cl);

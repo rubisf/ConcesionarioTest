@@ -10,11 +10,11 @@ namespace DomainModel
     {
 
         public int Id { get; private set; }
-        public string Nombre { get; }
-        public string Apellidos { get; }
+        public string Nombre { get; set;  }
+        public string Apellidos { get; set; }
         public string Telefono { get; set; }
-        public bool Vip { get; }
-        public IList<Presupuesto> Presupuestos { get; set; }
+        public bool Vip { get; set; }
+        public virtual ICollection<Presupuesto> Presupuestos  { get; set; }
 
         
 
@@ -27,6 +27,11 @@ namespace DomainModel
             this.Presupuestos = new List<Presupuesto>();
         }
 
+        public Cliente()
+        {
+            this.Presupuestos = new List<Presupuesto>();
+        }
+
         public void AniadePresupuesto(Presupuesto presu)
         {
             Presupuestos.Add(presu);
@@ -35,6 +40,7 @@ namespace DomainModel
         public override String ToString()
         {
             string cli = Id + " | " + Nombre + " | " + Apellidos + " | " + Telefono + " | " + Vip;
+            if(this.Presupuestos != null)
             foreach(Presupuesto p in this.Presupuestos)
             {
                 cli = cli + "\r\n\t" + p.Id + " | " + p.Estado + " | " + p.Importe;

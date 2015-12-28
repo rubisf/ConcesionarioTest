@@ -8,9 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{6BECB2A7-3A37-4C84-98E3-031D1B222201}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{77B1E02E-7C06-4EB7-9D0A-CB69EF6332A6}"
-	ProjectSection(SolutionItems) = preProject
-		Services\VehiculoService.cs = Services\VehiculoService.cs
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{EAEBBA62-93CA-4467-8F9A-49359300C922}"
 EndProject

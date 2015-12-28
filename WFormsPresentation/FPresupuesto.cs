@@ -77,7 +77,7 @@ namespace WFormsPresentation
                 int id = Int32.Parse(ve2.Split(sep)[0].Trim());
                 c = cService.Obtener(id);
             }
-            Presupuesto p = new Presupuesto(Int32.Parse(this.textBox1.Text), this.textBox2.Text, this.textBox3.Text, v,c);
+            Presupuesto p = new Presupuesto(Int32.Parse(this.textBox1.Text), this.textBox2.Text, Double.Parse(this.textBox3.Text), v,c);
 
             this.pService.Añadir(p);
         }
@@ -87,7 +87,7 @@ namespace WFormsPresentation
             Presupuesto p = this.pService.Obtener(Int32.Parse(this.textBox1.Text));
             if(p != null){
                 this.textBox2.Text = p.Estado;
-                this.textBox3.Text = p.Importe;
+                this.textBox3.Text = p.Importe + "";
                 this.comboCliente.SelectedItem = p.Cliente.ToString();
                 this.comboVehiculo.SelectedItem = p.Vehiculo.ToString();
             }

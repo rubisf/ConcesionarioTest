@@ -53,7 +53,7 @@ namespace Respositories
                             Cliente cl = new Cliente(reader.GetInt32(4), "", "", "", false);
                             double importe = reader.GetDouble(2);
                             string estado = reader.GetString(1);
-                            p = new Presupuesto(id, estado, importe + "", v, cl);
+                            p = new Presupuesto(id, estado, importe, v, cl);
                         }
                         reader.Close();
                         RepositoryCliente rc = new RepositoryCliente(sqlCon, sqlTran);
@@ -92,7 +92,7 @@ namespace Respositories
                             string estado = reader.GetString(1);
 
 
-                            c = new Presupuesto(id, estado, importe + "", v, cl);
+                            c = new Presupuesto(id, estado, importe, v, cl);
 
                             ilc.Add(c);
                         }
@@ -136,7 +136,7 @@ namespace Respositories
                             string estado = reader.GetString(1);
                             
 
-                            c = new Presupuesto(id, estado, importe+"", v, cl);
+                            c = new Presupuesto(id, estado, importe, v, cl);
 
                             ilc.Add(c);
                         }
