@@ -39,17 +39,10 @@ namespace Respositories
         public ICollection<Cliente> GetAll()
         {
             ICollection<Cliente> clis = null;
-            try {
+
+            clis = this.contexto.Clientes.ToList();
                 
-                using (var dbcxtransaction = this.contexto.Database.BeginTransaction())
-                {
-                    clis = this.contexto.Clientes.ToList();
-                }
-                
-            }catch(Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
+         
             return clis;
         }
 
@@ -81,7 +74,9 @@ namespace Respositories
         {
             using (var dbcxtransaction = contexto.Database.BeginTransaction())
             {
-                contexto.Clientes.Remove(t);
+                Cliente stub = new Cliente();
+                stub.Id = t.Id;
+                contexto.Clientes.Remove(stub);
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{CE784FB7-6A1A-4563-8CE7-3C8805414FE5}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Respositories", "Respositories\Respositories.csproj", "{CFA3151C-46C1-4FCB-A464-175C4C3D5614}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFormsPresentation", "WFormsPresentation\WFormsPresentation.csproj", "{ED5B8485-381C-4A5F-83EB-14E24CB6684C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfPresentation", "WpfPresentation\WpfPresentation.csproj", "{C42D800F-6A61-415A-A1BD-F0E88C99030E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{ED5B8485-381C-4A5F-83EB-14E24CB6684C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED5B8485-381C-4A5F-83EB-14E24CB6684C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED5B8485-381C-4A5F-83EB-14E24CB6684C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C42D800F-6A61-415A-A1BD-F0E88C99030E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42D800F-6A61-415A-A1BD-F0E88C99030E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C42D800F-6A61-415A-A1BD-F0E88C99030E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C42D800F-6A61-415A-A1BD-F0E88C99030E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +61,6 @@ Global
 		{B12810A3-0436-48FA-9178-E056B521D259} = {6BECB2A7-3A37-4C84-98E3-031D1B222201}
 		{CFA3151C-46C1-4FCB-A464-175C4C3D5614} = {CE784FB7-6A1A-4563-8CE7-3C8805414FE5}
 		{ED5B8485-381C-4A5F-83EB-14E24CB6684C} = {77B1E02E-7C06-4EB7-9D0A-CB69EF6332A6}
+		{C42D800F-6A61-415A-A1BD-F0E88C99030E} = {77B1E02E-7C06-4EB7-9D0A-CB69EF6332A6}
 	EndGlobalSection
 EndGlobal
